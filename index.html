@@ -593,38 +593,81 @@ Value is converted to number during fetch.</p>
 <p><code class="inline">Crater.alert(string, callback);</code></p>
 <p><code class="inline">Crater.alert(params, callback);</code></p>
 <p>Possible params:</p>
-<p><code class="inline">message</code> &mdash; Message to be displayed.</p>
-<p><code class="inline">title</code>   &mdash; If present, displays alert header with given title.</p>
-<p><code class="inline">closer</code>  &mdash; If true, shows close button in alert header.</p>
-<p><code class="inline">button</code>  &mdash; If present, displays alert footer with dismiss button with given text.</p>
+<ul><li> <code class="inline">message</code> &mdash; Message to be displayed.</li>
+</ul>
+<ul><li> <code class="inline">title</code>   &mdash; If present, displays alert header with given title.</li>
+</ul>
+<ul><li> <code class="inline">closer</code>  &mdash; If true, shows close button in alert header.</li>
+</ul>
+<ul><li> <code class="inline">button</code>  &mdash; If present, displays alert footer with dismiss button with given text.</li>
+</ul>
 <p> </p>
 
 
 <h3><a name="confirm--overlays--api">Confirm</a></h3>
 
 <p> </p>
-<p>Easily display any template in a modal form. Retains reactivity.</p>
+<p>Displays stylable confirm modal.</p>
 <p> </p>
 
 
 <h4><a name="usage--confirm--overlays--api">Usage</a></h4>
 
 <p> </p>
-<p><code class="inline">Crater.overlay(templateName, data, callback);</code></p>
+<p><code class="inline">Crater.confirm(string, callback);</code></p>
+<p><code class="inline">Crater.confirm(params, callback);</code></p>
+<p>Possible params:</p>
+<ul><li> <code class="inline">message</code> &mdash; Message to be displayed.</li>
+</ul>
+<ul><li> <code class="inline">title</code>   &mdash; If present, displays alert header with given title.</li>
+</ul>
+<ul><li> <code class="inline">closer</code>  &mdash; If true, shows close button in alert header.</li>
+</ul>
+<ul><li> <code class="inline">ok</code>      &mdash; Text to be displayed on the positive button (default: 'OK').</li>
+</ul>
+<ul><li> <code class="inline">cancel</code>  &mdash; Text to be displayed on the negative button (default: 'Cancel').</li>
+</ul>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Crater.confirm({
+  message: 'Remove this item?',
+  ok: 'Remove'
+}, function(err, confirmed) {
+  if(confirmed) Items.remove(itemId);
+});
+</code></pre>
+
+<p></p>
 <p> </p>
 
 
 <h3><a name="prompt--overlays--api">Prompt</a></h3>
 
 <p> </p>
-<p>Easily display any template in a modal form. Retains reactivity.</p>
+<p>Displays stylable prompt modal.</p>
 <p> </p>
 
 
 <h4><a name="usage--prompt--overlays--api">Usage</a></h4>
 
 <p> </p>
-<p><code class="inline">Crater.overlay(templateName, data, callback);</code></p>
+<p><code class="inline">Crater.propmt(string, callback);</code></p>
+<p><code class="inline">Crater.propmt(params, callback);</code></p>
+<p>Possible params:</p>
+<ul><li> <code class="inline">message</code> &mdash; Message to be displayed.</li>
+</ul>
+<ul><li> <code class="inline">value</code>   &mdash; Initial value of the input field.</li>
+</ul>
+<ul><li> <code class="inline">title</code>   &mdash; If present, displays alert header with given title.</li>
+</ul>
+<ul><li> <code class="inline">closer</code>  &mdash; If true, shows close button in alert header.</li>
+</ul>
+<ul><li> <code class="inline">ok</code>      &mdash; Text to be displayed on the positive button (default: 'OK').</li>
+</ul>
+<ul><li> <code class="inline">cancel</code>  &mdash; Text to be displayed on the negative button (default: 'Cancel').</li>
+</ul>
 <p> </p>
 
 </div>

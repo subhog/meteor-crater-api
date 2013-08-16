@@ -42,13 +42,13 @@ Usage
 
 Possible params:
 
-`message` --- Message to be displayed.
+- `message` --- Message to be displayed.
 
-`title`   --- If present, displays alert header with given title.
+- `title`   --- If present, displays alert header with given title.
 
-`closer`  --- If true, shows close button in alert header.
+- `closer`  --- If true, shows close button in alert header.
 
-`button`  --- If present, displays alert footer with dismiss button with given text.
+- `button`  --- If present, displays alert footer with dismiss button with given text.
 
 
 
@@ -58,14 +58,41 @@ Confirm
 ========================================================================
 
 
-Easily display any template in a modal form. Retains reactivity.
+Displays stylable confirm modal.
 
 
 
 Usage
 ------------------------------------------------------------------------
 
-`Crater.overlay(templateName, data, callback);`
+`Crater.confirm(string, callback);`
+
+`Crater.confirm(params, callback);`
+
+Possible params:
+
+- `message` --- Message to be displayed.
+
+- `title`   --- If present, displays alert header with given title.
+
+- `closer`  --- If true, shows close button in alert header.
+
+- `ok`      --- Text to be displayed on the positive button (default: 'OK').
+
+- `cancel`  --- Text to be displayed on the negative button (default: 'Cancel').
+
+
+Example:
+
+```
+Crater.confirm({
+  message: 'Remove this item?',
+  ok: 'Remove'
+}, function(err, confirmed) {
+  if(confirmed) Items.remove(itemId);
+});
+
+```
 
 
 
@@ -75,17 +102,31 @@ Prompt
 ========================================================================
 
 
-Easily display any template in a modal form. Retains reactivity.
+Displays stylable prompt modal.
 
 
 
 Usage
 ------------------------------------------------------------------------
 
-`Crater.overlay(templateName, data, callback);`
+`Crater.propmt(string, callback);`
+
+`Crater.propmt(params, callback);`
 
 
+Possible params:
 
+- `message` --- Message to be displayed.
+
+- `value`   --- Initial value of the input field.
+
+- `title`   --- If present, displays alert header with given title.
+
+- `closer`  --- If true, shows close button in alert header.
+
+- `ok`      --- Text to be displayed on the positive button (default: 'OK').
+
+- `cancel`  --- Text to be displayed on the negative button (default: 'Cancel').
 
 
 
