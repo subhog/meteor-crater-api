@@ -50,7 +50,8 @@ var compileParagraph = function(text) {
   return text.replace(/`(.*)`/gm, '<code class="inline">$1</code>')
   .replace(/\*\*(.*)\*\*/gm, '<b>$1</b>')
   .replace(/---/g, '&mdash;')
-  .replace(/--/g, '&ndash;');
+  .replace(/--/g, '&ndash;')
+  .replace(/\[(.*)\]\((.*)\)/g, '<a href="$2" class="a">$1</a>');
 }
 
 

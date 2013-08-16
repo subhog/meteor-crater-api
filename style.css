@@ -10,8 +10,14 @@ body {
 }
 
 
+a.a {
+  text-decoration: none;
+  color: #0060f0;
+}
 
-
+a.a:hover {
+  text-decoration: underline;
+}
 
 
 /* ****************************************************** */
