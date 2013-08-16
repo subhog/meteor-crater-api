@@ -1,0 +1,119 @@
+
+Components
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle
+========================================================================
+
+Simple and elegant two-state toggle.
+
+
+
+Usage
+------------------------------------------------------------------------
+
+Initialize toggle by adding `crater-toggle` class to an element
+and then calling `Crater.go` on surrounding template.
+
+Example:
+
+
+```
+<template name="options">
+    Night mode active <span class="crater-toggle"></span>
+</template>
+
+Template.options.rendered = function() {
+  Crater.go(this);
+}
+
+```
+
+
+Style
+------------------------------------------------------------------------
+
+`crater-toggle` --- base class of Toggler object
+
+`crater-toggle-on` --- additional class for **ON** state
+
+`crater-toggle-off` --- additional class for **OFF** state
+
+
+toggle event
+------------------------------------------------------------------------
+
+Custom event for `Crater.events` map.
+
+Invoked after ON/OFF state was changed.
+
+Example:
+
+```
+
+Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+    'toggle .option-toggle': function(e) {
+      console.log($(e.target).data('value'));
+    }
+  });
+}
+
+```
+
+
+data-value
+------------------------------------------------------------------------
+
+Boolean data attribute with ON/OFF state of the switch.
+
+
+Example:
+
+```
+
+Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+    'toggle .option-toggle': function(e) {
+      console.log($(e.target).data('value'));
+    }
+  });
+}
+
+```
+
+
+Remover
+========================================================================
+
+
+
+Usage
+------------------------------------------------------------------------
+
+
+
+
+Style
+------------------------------------------------------------------------
+
+
+
+
+confirm event
+------------------------------------------------------------------------

@@ -1,0 +1,631 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Documentation – Crater UI Library for Meteor.js</title>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:300&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="github"></div>
+<div class="toc">
+    <div class="toc-div1"><a href="#crater-ui-library">Crater UI Library</a></div>
+    <div class="toc-div2"><a href="#overview--crater-ui-library">Overview</a></div>
+    <div class="toc-div2"><a href="#concepts--crater-ui-library">Concepts</a></div>
+    <div class="toc-div2"><a href="#styling--crater-ui-library">Styling</a></div>
+    <div class="toc-div1"><a href="#installation">Installation</a></div>
+    <div class="toc-div1"><a href="#api">API</a></div>
+    <div class="toc-div2"><a href="#common--api">Common</a></div>
+    <div class="toc-div3"><a href="#crater-go--common--api">Crater.go</a></div>
+    <div class="toc-div3"><a href="#crater-events--common--api">Crater.events</a></div>
+    <div class="toc-div2"><a href="#components--api">Components</a></div>
+    <div class="toc-div3"><a href="#toggle--components--api">Toggle</a></div>
+    <div class="toc-div4"><a href="#usage--toggle--components--api">Usage</a></div>
+    <div class="toc-div4"><a href="#style--toggle--components--api">Style</a></div>
+    <div class="toc-div4"><a href="#toggle-event--toggle--components--api">toggle event</a></div>
+    <div class="toc-div4"><a href="#data-value--toggle--components--api">data-value</a></div>
+    <div class="toc-div3"><a href="#remover--components--api">Remover</a></div>
+    <div class="toc-div4"><a href="#usage--remover--components--api">Usage</a></div>
+    <div class="toc-div4"><a href="#style--remover--components--api">Style</a></div>
+    <div class="toc-div4"><a href="#confirm-event--remover--components--api">confirm event</a></div>
+    <div class="toc-div2"><a href="#forms--api">Forms</a></div>
+    <div class="toc-div3"><a href="#usage--forms--api">Usage</a></div>
+    <div class="toc-div4"><a href="#form-map--usage--forms--api">Form map</a></div>
+    <div class="toc-div4"><a href="#inject-data--usage--forms--api">Inject data</a></div>
+    <div class="toc-div4"><a href="#craterform-helper--usage--forms--api">craterForm helper</a></div>
+    <div class="toc-div4"><a href="#setup--usage--forms--api">Setup</a></div>
+    <div class="toc-div4"><a href="#event-handlers--usage--forms--api">Event handlers</a></div>
+    <div class="toc-div3"><a href="#field-types--forms--api">Field types</a></div>
+    <div class="toc-div4"><a href="#text--field-types--forms--api">text</a></div>
+    <div class="toc-div4"><a href="#textarea--field-types--forms--api">textarea</a></div>
+    <div class="toc-div4"><a href="#datetime--field-types--forms--api">datetime</a></div>
+    <div class="toc-div4"><a href="#number--field-types--forms--api">number</a></div>
+    <div class="toc-div4"><a href="#image--field-types--forms--api">image</a></div>
+    <div class="toc-div4"><a href="#group--field-types--forms--api">group</a></div>
+    <div class="toc-div4"><a href="#multi--field-types--forms--api">multi</a></div>
+    <div class="toc-div3"><a href="#events--forms--api">Events</a></div>
+    <div class="toc-div4"><a href="#changed--events--forms--api">changed</a></div>
+    <div class="toc-div4"><a href="#addmultiitem--events--forms--api">addMultiItem</a></div>
+    <div class="toc-div4"><a href="#removemultiitem--events--forms--api">removeMultiItem</a></div>
+    <div class="toc-div2"><a href="#overlays--api">Overlays</a></div>
+    <div class="toc-div3"><a href="#overlay--overlays--api">Overlay</a></div>
+    <div class="toc-div4"><a href="#usage--overlay--overlays--api">Usage</a></div>
+    <div class="toc-div3"><a href="#alert--overlays--api">Alert</a></div>
+    <div class="toc-div4"><a href="#usage--alert--overlays--api">Usage</a></div>
+    <div class="toc-div3"><a href="#confirm--overlays--api">Confirm</a></div>
+    <div class="toc-div4"><a href="#usage--confirm--overlays--api">Usage</a></div>
+    <div class="toc-div3"><a href="#prompt--overlays--api">Prompt</a></div>
+    <div class="toc-div4"><a href="#usage--prompt--overlays--api">Usage</a></div>
+<div class="toc-ending">&nbsp;</div></div>
+<div class="content">
+
+<h1><a name="crater-ui-library">Crater UI Library</a></h1>
+
+<p> </p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p> </p>
+
+
+<h2><a name="overview--crater-ui-library">Overview</a></h2>
+
+<p> </p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p> </p>
+
+
+<h2><a name="concepts--crater-ui-library">Concepts</a></h2>
+
+<p> </p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p> </p>
+
+
+<h2><a name="styling--crater-ui-library">Styling</a></h2>
+
+<p> </p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p>This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications. This is a small, but growing library of common UI elements
+that can be reused acrosss Meteor applications.</p>
+<p> </p>
+
+
+<h1><a name="installation">Installation</a></h1>
+
+<p> </p>
+<p>To add Crater package to your project, simply run:
+</p>
+
+
+<pre class="pre"><code>mrt add crater</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h1><a name="api">API</a></h1>
+
+<p> </p>
+<p> </p>
+
+
+<h2><a name="common--api">Common</a></h2>
+
+<p> </p>
+<p> </p>
+
+
+<h3><a name="crater-go--common--api">Crater.go</a></h3>
+
+<p> </p>
+<p><code class="inline">Crater.go(templateInstance)</code></p>
+<p>Use within <code class="inline">Template.x.rendered</code> function to initialize Crater UI elements used
+within template instance.</p>
+<p>You don't have to worry about calling this method multiple times.
+Crater ensures that element initialization doesn't happen twice.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Template.options.rendered = function() {
+  Crater.go(this);
+}</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h3><a name="crater-events--common--api">Crater.events</a></h3>
+
+<p> </p>
+<p><code class="inline">Crater.events(templateInstance, map)</code></p>
+<p>Similar to <code class="inline">Template.x.events</code>, used to pass event map to Crater elements.
+Use within <code class="inline">Template.x.rendered</code> function to add callbacks to Crater events.</p>
+<p>The reason for this function is that currently Meteor event maps don't accept custom events.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+
+    'toggle .optionSwitch': function(e) {
+      ...
+    },
+
+  });
+
+}</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h2><a name="components--api">Components</a></h2>
+
+<p> </p>
+<p> </p>
+
+
+<h3><a name="toggle--components--api">Toggle</a></h3>
+
+<p> </p>
+<p>Simple and elegant two-state toggle.</p>
+<p> </p>
+
+
+<h4><a name="usage--toggle--components--api">Usage</a></h4>
+
+<p> </p>
+<p>Initialize toggle by adding <code class="inline">crater-toggle</code> class to an element
+and then calling <code class="inline">Crater.go</code> on surrounding template.</p>
+<p>Example:</p>
+<p></p>
+
+
+<pre class="pre"><code>&lttemplate name="options"&gt
+    Night mode active &ltspan class="crater-toggle"&gt&lt/span&gt
+&lt/template&gt
+
+Template.options.rendered = function() {
+  Crater.go(this);
+}
+</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="style--toggle--components--api">Style</a></h4>
+
+<p> </p>
+<p><code class="inline">crater-toggle</code> &mdash; base class of Toggler object</p>
+<p><code class="inline">crater-toggle-on</code> &mdash; additional class for <b>ON</b> state</p>
+<p><code class="inline">crater-toggle-off</code> &mdash; additional class for <b>OFF</b> state</p>
+<p> </p>
+
+
+<h4><a name="toggle-event--toggle--components--api">toggle event</a></h4>
+
+<p> </p>
+<p>Custom event for <code class="inline">Crater.events</code> map.</p>
+<p>Invoked after ON/OFF state was changed.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>
+Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+    'toggle .option-toggle': function(e) {
+      console.log($(e.target).data('value'));
+    }
+  });
+}
+</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="data-value--toggle--components--api">data-value</a></h4>
+
+<p> </p>
+<p>Boolean data attribute with ON/OFF state of the switch.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>
+Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+    'toggle .option-toggle': function(e) {
+      console.log($(e.target).data('value'));
+    }
+  });
+}
+</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h3><a name="remover--components--api">Remover</a></h3>
+
+<p> </p>
+<p> </p>
+
+
+<h4><a name="usage--remover--components--api">Usage</a></h4>
+
+<p> </p>
+<p> </p>
+
+
+<h4><a name="style--remover--components--api">Style</a></h4>
+
+<p> </p>
+<p> </p>
+
+
+<h4><a name="confirm-event--remover--components--api">confirm event</a></h4>
+
+<p> </p>
+<p> </p>
+
+
+<h2><a name="forms--api">Forms</a></h2>
+
+<p> </p>
+<p>Forms component can be used to easily generate forms that will operate
+on collection objects or other data.</p>
+<p> </p>
+
+
+<h3><a name="usage--forms--api">Usage</a></h3>
+
+<p> </p>
+<p>There are several steps needed to use form component.</p>
+<ul><li> Create form map</li>
+<li> Inject data to the map</li>
+<li> Display form with template helper</li>
+<li> Initialize form events</li>
+<li> Write handlers for change events</li>
+</ul>
+<p> </p>
+
+
+<h4><a name="form-map--usage--forms--api">Form map</a></h4>
+
+<p> </p>
+<p>Form map is an array that describes all the fields
+that will be present in the form.
+Most objects in the array has three properties:</p>
+<ul><li> <code class="inline">label</code> &mdash; Text displayed next to the field</li>
+<li> <code class="inline">param</code> &mdash; Name of the parameter in the data object the field represents</li>
+<li> <code class="inline">type</code> &mdash; Type of the field and data.</li>
+</ul>
+<p>Some additional properties are possible for certain field types.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>var map = [
+  {label: 'Name', param: 'name', type: 'text'},
+  {label: 'Description', param: 'description', type: 'textarea'},
+  {label: 'Links', param: 'links', type: 'multi', array: [
+    {label: 'URL', param: 'url', type: 'text'},
+  ]},
+];</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="inject-data--usage--forms--api">Inject data</a></h4>
+
+<p> </p>
+<p>Usually, you'll want to use the form to edit a specific data object,
+like an item from Meteor collection.
+To display proper values in the form, you need to inject this data
+object to the form map. This is what <code class="inline">inject</code> function does.</p>
+<p><code class="inline">Crater.forms.inject(map, data, options)</code></p>
+<p>Parameters:</p>
+<ul><li> <code class="inline">map</code> &mdash; form map you want to inject data to</li>
+<li> <code class="inline">data</code> &mdash; data object that will be displayed in the form</li>
+<li> <code class="inline">options</code> &mdash; object with optional form options</li>
+</ul>
+<p>Currently, the following options are possible:</p>
+<ul><li> <code class="inline">prefix</code> &mdash; prefix for the form field ids &ndash; usefull when you have several forms on the page</li>
+</ul>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>
+Template.x.form = function() {
+  return Crater.forms.inject(map, Items.findOne(Session.get('item_id')), craterFormOptions);
+};
+</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="craterform-helper--usage--forms--api">craterForm helper</a></h4>
+
+<p> </p>
+<p>Use <code class="inline">craterForm</code> helper in your template to display the form.</p>
+<p>- The helper takes injected map as an argument.
+- Embed form in an element with <code class="inline">crater-form</code> class to take advantage of form events.
+</p>
+
+
+<pre class="pre"><code>&lttemplate name="x"&gt
+  &ltdiv class="crater-form"&gt
+    {{craterForm form}}
+  &lt/div&gt
+&lt/template&gt</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="setup--usage--forms--api">Setup</a></h4>
+
+<p> </p>
+<p>For the events to work, you need to initialize form component.
+It is best done in the <code class="inline">rendered</code> callback of your template.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Template.x.rendered = function() {
+  Crater.go(this);
+  Crater.forms.setup(this);
+};</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="event-handlers--usage--forms--api">Event handlers</a></h4>
+
+<p> </p>
+<p> </p>
+
+
+<h3><a name="field-types--forms--api">Field types</a></h3>
+
+<p> </p>
+<p> </p>
+
+
+<h4><a name="text--field-types--forms--api">text</a></h4>
+
+<p> </p>
+<p>Generates single line text field</p>
+<p> </p>
+
+
+<h4><a name="textarea--field-types--forms--api">textarea</a></h4>
+
+<p> </p>
+<p>Generates text area</p>
+<p> </p>
+
+
+<h4><a name="datetime--field-types--forms--api">datetime</a></h4>
+
+<p> </p>
+<p>Generates single line text field.
+Value is converted to date during fetch.</p>
+<p> </p>
+
+
+<h4><a name="number--field-types--forms--api">number</a></h4>
+
+<p> </p>
+<p>Generates single line text field.
+Value is converted to number during fetch.</p>
+<p> </p>
+
+
+<h4><a name="image--field-types--forms--api">image</a></h4>
+
+<p> </p>
+<p>Generates image preview and a button to change it.</p>
+<p> </p>
+
+
+<h4><a name="group--field-types--forms--api">group</a></h4>
+
+<p> </p>
+<p>Groups several fields into logical part.</p>
+<p> </p>
+
+
+<h4><a name="multi--field-types--forms--api">multi</a></h4>
+
+<p> </p>
+<p>Handles subform for array value, with add / remove buttons.</p>
+<p> </p>
+
+
+<h3><a name="events--forms--api">Events</a></h3>
+
+<p> </p>
+<p> </p>
+
+
+<h4><a name="changed--events--forms--api">changed</a></h4>
+
+<p> </p>
+<p>Called when user changes value of a field.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Crater.events(this, {
+
+  'changed .crater-form': function(e) {
+    var value = Crater.forms.fetch(e.target, formFields, craterFormOptions);
+    Items.update(Session.get('itemId'), {$set: value});
+  },
+
+});</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="addmultiitem--events--forms--api">addMultiItem</a></h4>
+
+<p> </p>
+<p>Called when user adds item to an array.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Crater.events(this, {
+
+  'addMultiItem .crater-form': function(e, data) {
+    var update = {};
+    update[data.param] = {};
+    Items.update(Session.get('itemId'), {$push: update});
+  },
+
+});</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h4><a name="removemultiitem--events--forms--api">removeMultiItem</a></h4>
+
+<p> </p>
+<p>Called when user removes item from an array value.</p>
+<p>Example:
+</p>
+
+
+<pre class="pre"><code>Crater.events(this, {
+  
+  'removeMultiItem .crater-form': function(e, data) {
+    var unset = {};
+    unset[data.param + '.' + data.idx] = 1;
+    var pull = {};
+    pull[data.param] = null;
+    Items.update(Session.get('itemId'), {$unset: unset});
+    Items.update(Session.get('itemId'), {$pull: pull});
+  },
+  
+});</code></pre>
+
+<p></p>
+<p> </p>
+
+
+<h2><a name="overlays--api">Overlays</a></h2>
+
+<p> </p>
+<p> </p>
+
+
+<h3><a name="overlay--overlays--api">Overlay</a></h3>
+
+<p> </p>
+<p>Easily display any template in a modal form. Retains reactivity.</p>
+<p> </p>
+
+
+<h4><a name="usage--overlay--overlays--api">Usage</a></h4>
+
+<p> </p>
+<p><code class="inline">Crater.overlay(templateName, data, callback);</code></p>
+<p> </p>
+
+
+<h3><a name="alert--overlays--api">Alert</a></h3>
+
+<p> </p>
+<p>Display text message in a styled modal.</p>
+<p> </p>
+
+
+<h4><a name="usage--alert--overlays--api">Usage</a></h4>
+
+<p> </p>
+<p><code class="inline">Crater.alert(string, callback);</code></p>
+<p><code class="inline">Crater.alert(params, callback);</code></p>
+<p>Possible params:</p>
+<p><code class="inline">message</code> &mdash; Message to be displayed.</p>
+<p><code class="inline">title</code>   &mdash; If present, displays alert header with given title.</p>
+<p><code class="inline">closer</code>  &mdash; If true, shows close button in alert header.</p>
+<p><code class="inline">button</code>  &mdash; If present, displays alert footer with dismiss button with given text.</p>
+<p> </p>
+
+
+<h3><a name="confirm--overlays--api">Confirm</a></h3>
+
+<p> </p>
+<p>Easily display any template in a modal form. Retains reactivity.</p>
+<p> </p>
+
+
+<h4><a name="usage--confirm--overlays--api">Usage</a></h4>
+
+<p> </p>
+<p><code class="inline">Crater.overlay(templateName, data, callback);</code></p>
+<p> </p>
+
+
+<h3><a name="prompt--overlays--api">Prompt</a></h3>
+
+<p> </p>
+<p>Easily display any template in a modal form. Retains reactivity.</p>
+<p> </p>
+
+
+<h4><a name="usage--prompt--overlays--api">Usage</a></h4>
+
+<p> </p>
+<p><code class="inline">Crater.overlay(templateName, data, callback);</code></p>
+<p> </p>
+
+</div>
+</html>

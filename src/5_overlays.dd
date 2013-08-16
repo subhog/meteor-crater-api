@@ -1,0 +1,104 @@
+
+
+
+
+Overlays
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+
+Overlay
+========================================================================
+
+
+Easily display any template in a modal form. Retains reactivity.
+
+
+
+Usage
+------------------------------------------------------------------------
+
+`Crater.overlay(templateName, data, callback);`
+
+
+
+
+
+Alert
+========================================================================
+
+Display text message in a styled modal.
+
+
+
+
+Usage
+------------------------------------------------------------------------
+
+`Crater.alert(string, callback);`
+
+`Crater.alert(params, callback);`
+
+Possible params:
+
+`message` --- Message to be displayed.
+
+`title`   --- If present, displays alert header with given title.
+
+`closer`  --- If true, shows close button in alert header.
+
+`button`  --- If present, displays alert footer with dismiss button with given text.
+
+
+
+
+
+Confirm
+========================================================================
+
+
+Easily display any template in a modal form. Retains reactivity.
+
+
+
+Usage
+------------------------------------------------------------------------
+
+`Crater.overlay(templateName, data, callback);`
+
+
+
+
+
+Prompt
+========================================================================
+
+
+Easily display any template in a modal form. Retains reactivity.
+
+
+
+Usage
+------------------------------------------------------------------------
+
+`Crater.overlay(templateName, data, callback);`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

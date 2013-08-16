@@ -1,0 +1,64 @@
+API
+====================================================================================================
+====================================================================================================
+
+
+Common
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+
+Crater.go
+====================================================================================================
+
+
+`Crater.go(templateInstance)`
+
+
+Use within `Template.x.rendered` function to initialize Crater UI elements used
+within template instance.
+
+You don't have to worry about calling this method multiple times.
+Crater ensures that element initialization doesn't happen twice.
+
+
+
+Example:
+
+```
+Template.options.rendered = function() {
+  Crater.go(this);
+}
+```
+
+
+
+Crater.events
+====================================================================================================
+
+
+`Crater.events(templateInstance, map)`
+
+Similar to `Template.x.events`, used to pass event map to Crater elements.
+Use within `Template.x.rendered` function to add callbacks to Crater events.
+
+
+The reason for this function is that currently Meteor event maps don't accept custom events.
+
+
+Example:
+
+```
+Template.options.rendered = function() {
+  Crater.go(this);
+  Crater.events(this, {
+
+    'toggle .optionSwitch': function(e) {
+      ...
+    },
+
+  });
+
+}
+```

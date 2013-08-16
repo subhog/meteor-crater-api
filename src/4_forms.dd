@@ -1,0 +1,244 @@
+
+
+
+Forms
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+Forms component can be used to easily generate forms that will operate
+on collection objects or other data.
+
+
+
+
+Usage
+========================================================================
+
+
+There are several steps needed to use form component.
+
+- Create form map
+- Inject data to the map
+- Display form with template helper
+- Initialize form events
+- Write handlers for change events
+
+
+
+
+Form map
+------------------------------------------------------------------------
+
+Form map is an array that describes all the fields
+that will be present in the form.
+Most objects in the array has three properties:
+
+- `label` --- Text displayed next to the field
+- `param` --- Name of the parameter in the data object the field represents
+- `type` --- Type of the field and data.
+
+Some additional properties are possible for certain field types.
+
+Example:
+
+```
+var map = [
+  {label: 'Name', param: 'name', type: 'text'},
+  {label: 'Description', param: 'description', type: 'textarea'},
+  {label: 'Links', param: 'links', type: 'multi', array: [
+    {label: 'URL', param: 'url', type: 'text'},
+  ]},
+];
+```
+
+
+
+
+Inject data
+------------------------------------------------------------------------
+
+Usually, you'll want to use the form to edit a specific data object,
+like an item from Meteor collection.
+To display proper values in the form, you need to inject this data
+object to the form map. This is what `inject` function does.
+
+`Crater.forms.inject(map, data, options)`
+
+Parameters:
+
+- `map` --- form map you want to inject data to
+- `data` --- data object that will be displayed in the form
+- `options` --- object with optional form options
+
+Currently, the following options are possible:
+
+- `prefix` --- prefix for the form field ids -- usefull when you have several forms on the page
+
+
+Example:
+
+```
+
+Template.x.form = function() {
+  return Crater.forms.inject(map, Items.findOne(Session.get('item_id')), craterFormOptions);
+};
+
+```
+
+craterForm helper
+------------------------------------------------------------------------
+
+Use `craterForm` helper in your template to display the form.
+
+- The helper takes injected map as an argument.
+- Embed form in an element with `crater-form` class to take advantage of form events.
+
+```
+<template name="x">
+  <div class="crater-form">
+    {{craterForm form}}
+  </div>
+</template>
+```
+
+
+Setup
+------------------------------------------------------------------------
+
+For the events to work, you need to initialize form component.
+It is best done in the `rendered` callback of your template.
+
+Example:
+
+```
+Template.x.rendered = function() {
+  Crater.go(this);
+  Crater.forms.setup(this);
+};
+```
+
+
+
+Event handlers
+------------------------------------------------------------------------
+
+
+
+
+Field types
+========================================================================
+
+
+text
+------------------------------------------------------------------------
+
+Generates single line text field
+
+
+textarea
+------------------------------------------------------------------------
+
+Generates text area
+
+
+datetime
+------------------------------------------------------------------------
+
+Generates single line text field.
+Value is converted to date during fetch.
+
+
+number
+------------------------------------------------------------------------
+
+Generates single line text field.
+Value is converted to number during fetch.
+
+
+image
+------------------------------------------------------------------------
+
+Generates image preview and a button to change it.
+
+
+group
+------------------------------------------------------------------------
+
+Groups several fields into logical part.
+
+
+multi
+------------------------------------------------------------------------
+
+Handles subform for array value, with add / remove buttons.
+
+
+
+Events
+========================================================================
+
+changed
+------------------------------------------------------------------------
+
+Called when user changes value of a field.
+
+Example:
+
+```
+Crater.events(this, {
+
+  'changed .crater-form': function(e) {
+    var value = Crater.forms.fetch(e.target, formFields, craterFormOptions);
+    Items.update(Session.get('itemId'), {$set: value});
+  },
+
+});
+```
+
+
+addMultiItem
+------------------------------------------------------------------------
+
+Called when user adds item to an array.
+
+
+Example:
+
+```
+Crater.events(this, {
+
+  'addMultiItem .crater-form': function(e, data) {
+    var update = {};
+    update[data.param] = {};
+    Items.update(Session.get('itemId'), {$push: update});
+  },
+
+});
+```
+
+removeMultiItem
+------------------------------------------------------------------------
+
+Called when user removes item from an array value.
+
+Example:
+
+```
+Crater.events(this, {
+  
+  'removeMultiItem .crater-form': function(e, data) {
+    var unset = {};
+    unset[data.param + '.' + data.idx] = 1;
+    var pull = {};
+    pull[data.param] = null;
+    Items.update(Session.get('itemId'), {$unset: unset});
+    Items.update(Session.get('itemId'), {$pull: pull});
+  },
+  
+});
+```
+
+
+
+
